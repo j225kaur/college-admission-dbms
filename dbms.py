@@ -51,8 +51,8 @@ def display():
 
 def modify():
   st_name=input("Enter Student Name:")
-  Fee_change="Update MAJOR_INFO set Fees_to_be_payed=Fees_to_be_payed-50000 where Student_Name='%st_name'"
-  mycursor.execute(Fee_change)
+  Fee_change="Update MAJOR_INFO set Fees_to_be_payed=Fees_to_be_payed-50000 where Student_Name=?"
+  mycursor.execute(Fee_change,(st_name,))
   db_conn.commit()
   print(Fee_change)
 
